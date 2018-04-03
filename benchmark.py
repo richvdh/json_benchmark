@@ -83,17 +83,6 @@ def print_results(results):
             *("%20f" % results[benchmark_name].get(module_name, 0)
                 for benchmark_name in benchmarks)
         )
-    return
-
-    print()
-    json_mod = "json %s" % (json.__version__,)
-    for b in results:
-        print(b)
-        base = results[b][json_mod]
-        for m in results[b]:
-            if m == json_mod:
-                continue
-            print("%s\t%f" % (m, (results[b][m]-base) / base))
 
 
 def run_benchmarks():
